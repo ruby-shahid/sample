@@ -1,0 +1,33 @@
+<h2>Edit <%= @user.email.to_s.humanize %></h2>
+
+<%= form_for @user, url: {action: "update"} do |f| %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :home_address %><br />
+    <%= f.text_field :home_address, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :work_address %><br />
+    <%= f.text_field :work_address, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :approved %>
+    <%= f.check_box :approved %>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit "Update" %>
+  </div>
+<% end %>
+
+
+

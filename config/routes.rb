@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   #   end
 
   get 'pages/welcome'
+  
   resources :users
 
 

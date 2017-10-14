@@ -41,16 +41,5 @@ class User
   # field :failed_attempts, type: Integer, default: 0 # Only if lock strategy is :failed_attempts
   # field :unlock_token,    type: String # Only if unlock strategy is :email or :both
   # field :locked_at,       type: Time
-
-  def active_for_authentication? 
-    super && approved? 
-  end 
   
-  def inactive_message 
-    if !approved? 
-      :not_approved 
-    else 
-      super # Use whatever other message 
-    end 
-  end
 end

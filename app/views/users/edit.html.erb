@@ -18,16 +18,21 @@
     <%= f.text_field :work_address, autofocus: true %>
   </div>
 
-  <div class="field">
-    <%= f.label :approved %>
-    <%= f.check_box :approved %>
-  </div>
+  <% if current_user.admin? %>
+    <div class="field">
+      <%= f.label :role %><br />
+      <%= f.text_field :role %>
+    </div>
+
+    <div class="field">
+      <%= f.label :approved %>
+      <%= f.check_box :approved %>
+    </div>
+  <% end %>
 
 
   <div class="actions">
     <%= f.submit "Update" %>
   </div>
 <% end %>
-
-
 

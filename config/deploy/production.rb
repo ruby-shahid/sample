@@ -7,6 +7,8 @@
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
 server 'ubuntu@ec2-13-126-182-184.ap-south-1.compute.amazonaws.com', user: 'deploy', roles: %w{web app db}
+set :puma_env, 'production'
+set :nginx_server_name, 'ubuntu@ec2-13-126-182-184.ap-south-1.compute.amazonaws.com'
 
 
 

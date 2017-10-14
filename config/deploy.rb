@@ -1,8 +1,8 @@
 # config valid only for current version of Capistrano
 lock "3.9.1"
 
-set :stage, :development
-set :application, "sample_moingoid_app"
+set :stage, :production
+set :application, "sample"
 set :repo_url, "git@github.com:ruby-shahid/sample.git"
 
 set :deploy_to, '/home/deploy/sample'

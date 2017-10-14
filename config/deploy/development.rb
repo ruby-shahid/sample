@@ -6,5 +6,5 @@ server 'ubuntu@ec2-13-126-182-184.ap-south-1.compute.amazonaws.com', user: 'depl
 #   auth_methods: %w(publickey)
 # }
 
-set :puma_env, 'production'
+set :puma_env, 'development'
 set :nginx_server_name, 'ubuntu@ec2-13-126-182-184.ap-south-1.compute.amazonaws.com'

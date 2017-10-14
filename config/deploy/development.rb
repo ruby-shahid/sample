@@ -1,1 +1,1 @@
-server '52.2.139.74', user: 'deploy', roles: %w{web app db}
+server 'ubuntu@ec2-13-126-182-184.ap-south-1.compute.amazonaws.com', user: 'deploy', roles: %w{web app db}

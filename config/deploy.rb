@@ -1,10 +1,11 @@
 # config valid only for current version of Capistrano
 lock "3.9.1"
 
+set :stage, :development
 set :application, "sample_moingoid_app"
 set :repo_url, "git@github.com:ruby-shahid/sample.git"
 
-set :deploy_to, '/home/deploy/sample_moingoid_app'
+set :deploy_to, '/home/deploy/sample'
 set :pty, true
 set :linked_files, %w{config/mongoid.yml config/application.yml}
 # Default branch is :master

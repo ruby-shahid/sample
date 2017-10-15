@@ -6,8 +6,8 @@ class ApplicationController < ActionController::Base
   	  users_path 
   	elsif !current_user.admin? && current_user.approved?
       user_path(current_user.id)
-    elsif !current_user.approved?
-      pages_welcome_path
+    # elsif !current_user.approved?
+    #   pages_welcome_path
     else
       super
   	end	

@@ -9,14 +9,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  def create
-    build_resource(sign_up_params)
-    if resource.save
-      redirect_to pages_welcome_path
-    else
-      super
-    end
-  end
+  # def create
+  #   build_resource(sign_up_params)
+  #   if resource.save
+  #     redirect_to pages_welcome_path
+  #   else
+  #     super
+  #   end
+  # end
 
   # PUT /resource
   # def update
@@ -54,9 +54,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # The path used after sign up.
-  def after_sign_up_path_for(resource)
-    redirect_to (pages_welcome_path) and return
-  end
+  # def after_sign_up_path_for(resource)
+  #   redirect_to (pages_welcome_path) and return
+  # end
 
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)

@@ -9,20 +9,17 @@
 
 
   <div class="field">
-    <%= f.label :home_address %><br />
+    <%= f.label :home_address %><br/>
     <%= f.text_field :home_address, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :work_address %><br />
-    <%= f.text_field :work_address, autofocus: true %>
-  </div>
+    <%= f.label :work_address %><br/>
+    <%= f.text_field :work_address, autofocus: true %><br/>
+  </div><br>
 
   <% if current_user.admin? %>
-    <div class="field">
-      <%= f.label :role %><br />
-      <%= f.text_field :role %>
-    </div>
+  <%= f.select(:role, [:admin, :guest, :operator], :prompt => 'Select') %>
 
     <div class="field">
       <%= f.label :approved %>

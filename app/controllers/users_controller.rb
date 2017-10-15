@@ -40,7 +40,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:email, :home_address, :work_address, :approved)
+    params.require(:user).permit(:email, :home_address, :work_address, :approved, :role)
   end
 
   def require_admin

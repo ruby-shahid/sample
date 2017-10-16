@@ -1,14 +1,15 @@
 # config valid only for current version of Capistrano
 lock "3.9.1"
 
-set :stage, :production
+#set :stage, :production
 set :application, "sample"
 set :repo_url, "git@github.com:ruby-shahid/sample.git"
-set :ssh_options, {
-  forward_agent: true,
-  auth_methods: ["publickey"],
-  keys: ["#{Dir.home}/.ssh/MongoPersonal.pem"]
-}
+set :branch, :dev_setup
+# set :ssh_options, {
+#   forward_agent: true,
+#   auth_methods: ["publickey"],
+#   keys: ["#{Dir.home}/.ssh/dev_again.pem"]
+# }
 
 set :deploy_to, '/home/deploy/sample'
 set :pty, true

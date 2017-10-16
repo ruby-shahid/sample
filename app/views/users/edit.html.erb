@@ -1,6 +1,7 @@
 <h2>Edit <%= @user.email.to_s.humanize %></h2>
 
 <%= form_for @user, url: {action: "update"} do |f| %>
+  <%#= devise_error_messages! %>
 
   <div class="field">
     <%= f.label :email %><br />

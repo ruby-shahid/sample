@@ -1,7 +1,7 @@
-server '172.31.22.21', user: 'deploy', roles: %w{web app db}
+server 'ubuntu@ec2-13-126-226-33.ap-south-1.compute.amazonaws.com', user: 'deploy', roles: %w{web app db}
 
 # set :ssh_options, {
-#   keys: %w(~/.ssh/id_rsa, ~/.ssh/abc),
+#   keys: %w(~/.ssh/id_rsa, ~/.ssh/),
 #   forward_agent: true,
 #   auth_methods: %w(publickey)
 # }

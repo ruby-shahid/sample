@@ -26,6 +26,8 @@ gem 'mongoid', '~> 5.0'
 gem 'mongoid-enum', git: 'git@github.com:Bartuz/mongoid-enum.git'
 gem 'devise'
 gem "figaro"
+gem 'execjs'
+gem 'therubyracer'
 
 #production
 gem 'puma'

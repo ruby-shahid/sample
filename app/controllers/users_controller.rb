@@ -17,8 +17,22 @@ class UsersController < ApplicationController
 
 
   def update
-	  if @user.update(user_params)
-	    redirect_to users_path, notice: " #{@user.email} profile was successfully updated."
+	  if @user.update(user_params.except(:password))
+      if user_params[:password].present? && !user_params[:password].empty?
+        @user.update(password: user_params[:password])
+        sign_in @user, :bypass => true
+        if current_user.admin?
+	        redirect_to users_path, notice: " #{@user.email} profile was successfully updated."
+        else
+          redirect_to user_path, notice: " #{@user.email} profile was successfully updated."
+        end
+      else
+         if current_user.admin?
+          redirect_to users_path, notice: " #{@user.email} profile was successfully updated."
+        else
+          redirect_to user_path, notice: " #{@user.email} profile was successfully updated."
+        end
+      end
 	  else
 	    format.html {render action: 'edit'}
 	  end
@@ -40,7 +54,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:email, :home_address, :work_address, :approved, :role)
+    params.require(:user).permit(:email, :home_address, :work_address, :password, :approved, :role)
   end
 
   def require_admin

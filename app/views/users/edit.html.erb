@@ -19,6 +19,11 @@
     <%= f.text_field :work_address, autofocus: true %><br/>
   </div><br>
 
+  <% if !current_user.admin? %>
+    <%= f.label :password %><br/>
+    <%= f.password_field :password, autofocus: true %><br/>
+  <% end %>
+
   <% if current_user.admin? %>
   <%= f.select(:role, [:admin, :guest, :operator], :prompt => 'Select') %>
 

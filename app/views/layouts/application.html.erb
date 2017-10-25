@@ -12,15 +12,17 @@
 	    <%= flash_messages %>
 		  <div class="navbar navbar-fixed-top navbar-inverse">
 			  <div class="container">
-			    <%= link_to "sample app", '#', id: "logo" %>
+			    <%= link_to "Mongoid app", '#', id: "logo" %>
 			    <nav>
 			      <ul class="nav navbar-nav navbar-right">
-			      <% if user_signed_in? %>
-			        Signed in as <%= current_user.email %>. Not you?
-			        <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-			      <% else %>
-			        <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
-			      <% end %>
+			      	<div class="my_class">
+					      <% if user_signed_in? %>
+					        Signed in as <%= current_user.email %>. Not you?
+					        <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+					      <% else %>
+					        <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "Sign in", new_user_session_path %>
+					      <% end %>
+              </div>
 			      </ul>
 			    </nav>
 			  </div>
